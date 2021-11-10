@@ -1,27 +1,27 @@
 import React from "react";
-import { MovieCard } from "./styles";
-import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
+import { MovieCard, MovieTitle, Rating, Synopsis } from "./styles";
+import {Card } from "react-native-paper";
 
-export const MovieCardInfo = (props) => {
-  const LeftContent = (props) => <Avatar.Icon {...props} icon="folder" />;
+export const MovieCardInfo = ({movie = {}}) => {
+
+  const {
+    original_title = "Movie Title",
+    release_date = 2000,
+    overview = "Summary goes here, will probably be 2-3 lines so adding more words to display it",
+    vote_average = 5,
+    poster_path = "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg"
+
+  } = movie;
+
 
   return (
     <>
       <MovieCard elevation={5}>
-        <Card.Title
-          title="Card Title"
-          subtitle="Card Subtitle"
-          left={LeftContent}
-        />
-        <Card.Content>
-          <Title>Card title</Title>
-          <Paragraph>Card content</Paragraph>
-        </Card.Content>
-        <Card.Cover source={{ uri: "https://picsum.photos/700" }} />
-        <Card.Actions>
-          <Button>Cancel</Button>
-          <Button>Ok</Button>
-        </Card.Actions>
+        <MovieTitle>{original_title} ({`${release_date}`.substr(0,4)})</MovieTitle>
+        <Card.Cover source={{ uri:"https://image.tmdb.org/t/p/w500" +`${poster_path}`}} />
+          <Rating>{vote_average}</Rating>
+          <Synopsis>{overview}</Synopsis>
+
       </MovieCard>
     </>
   );
