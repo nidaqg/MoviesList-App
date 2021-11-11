@@ -1,6 +1,7 @@
 import React from "react";
 import { MovieCard, MovieTitle, Rating, Synopsis } from "./styles";
 import {Card } from "react-native-paper";
+import { View, Image } from "react-native";
 
 export const MovieCardInfo = ({movie = {}}) => {
 
@@ -16,10 +17,14 @@ export const MovieCardInfo = ({movie = {}}) => {
 
   return (
     <>
-      <MovieCard elevation={5}>
+      <MovieCard elevation={7}>
         <MovieTitle>{original_title} ({`${release_date}`.substr(0,4)})</MovieTitle>
-        <Card.Cover source={{ uri:"https://image.tmdb.org/t/p/w500" +`${poster_path}`}} />
-          <Rating>{vote_average}</Rating>
+        <Image 
+        style={{height:400}}
+        source={{ uri:"https://image.tmdb.org/t/p/w500" +`${poster_path}`}}
+        resizeMode='contain' 
+        />
+          <Rating>{`Rating: ${vote_average}`}</Rating>
           <Synopsis>{overview}</Synopsis>
 
       </MovieCard>
