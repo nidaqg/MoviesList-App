@@ -4,7 +4,6 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { MoviesNavigator } from './MoviesNavigation';
-import { HomePage } from '../../features/homepage/HomePage';
 import { SettingsPage } from '../../features/settings/Settings';
 import { FavouritesPage } from '../../features/favourites/Favourites';
 

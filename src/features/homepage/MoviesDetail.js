@@ -1,10 +1,19 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView } from 'react-native';
+import { MovieCardInfo } from './MovieCardInfo';
+import { MoviesContainer } from './styles';
 
-export const MoviesDetail = () => {
+export const MoviesDetail = ({route}) => {
+
+    const {movie} = route.params;
+
     return(
-        <View>
-            <Text>Details</Text>
-        </View>
+        <>
+        <MoviesContainer>
+            <ScrollView>
+          <MovieCardInfo movie={movie}/>  
+          </ScrollView>
+          </MoviesContainer>
+        </>
     )
 }

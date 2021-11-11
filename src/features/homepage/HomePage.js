@@ -35,7 +35,7 @@ export const HomePage = ({navigation}) => {
             movieData.map((movie) => 
             <TouchableOpacity
             onPress={() => {
-              navigation.navigate("MoviesDetail")
+              navigation.navigate("MoviesDetail", {movie: movie,})
             }}
             >
               <FadeInView>
