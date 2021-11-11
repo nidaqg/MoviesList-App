@@ -16,16 +16,16 @@ export const Navigation = () => {
             tabBarIcon: ({ color, size }) => {
               let iconName;
               if (route.name === 'Movies') {
-                iconName = 'fast-food-outline';
+                iconName = 'film';
               } else if (route.name === 'Settings') {
                 iconName = 'settings-outline';
               } else if (route.name === 'Favourites') {
-                iconName = 'map-outline';
+                iconName = 'heart';
               } 
             return <Ionicons name={iconName} size={size} color={color} />;
             },
             tabBarActiveTintColor: "#06304b",
-            tabBarInactiveTintColor: '#BDBFC2',
+            tabBarInactiveTintColor: '#ABACAD',
           })}
           > 
       <Tab.Screen name="Movies" component={HomePage} />
