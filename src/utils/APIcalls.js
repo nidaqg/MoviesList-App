@@ -7,6 +7,6 @@ let APIkey = "api_key=d7de7ce6389671074d6332dc2edaec14"
 let extras = "&language=en-US&page=1&include_adult=false"
 
     return (
-    axios.get(baseURL + APIkey + "&query=" + query)
+    axios.get(baseURL + APIkey + "&query=" + query + extras)
     )
 }

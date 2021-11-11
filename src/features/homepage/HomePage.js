@@ -11,10 +11,12 @@ export const HomePage = () => {
 //search by  movie
   const [searchMovie, setSearchMovie] = useState('');
 
+//function to handle text change in search bar
   const onChangeSearch = query => {
     setSearchMovie(query)
   };
 
+  //function to handle submit of search term
   const onSubmitMovie = () => {
      if (searchMovie){
       moviesData(searchMovie)
@@ -35,6 +37,7 @@ export const HomePage = () => {
       .catch((e) => console.log(e));
   };
 
+  //to populate page on opening
   useEffect(() => {
   moviesData("avengers")
   }, [])

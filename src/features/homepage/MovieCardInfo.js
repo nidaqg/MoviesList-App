@@ -8,7 +8,7 @@ import { SvgXml } from "react-native-svg";
 export const MovieCardInfo = ({movie = {}}) => {
 //deconstruct movie object
   const {
-    original_title = "Movie Title",
+    title = "Movie Title",
     release_date = 2000,
     overview = "Summary goes here, will probably be 2-3 lines so adding more words to display it",
     vote_average = 5,
@@ -23,8 +23,15 @@ export const MovieCardInfo = ({movie = {}}) => {
 
   return (
     <>
-      <MovieCard elevation={7}>
-        <MovieTitle>{original_title} ({`${release_date}`.substr(0,4)})</MovieTitle>
+      <MovieCard 
+      key={id}
+      elevation={7}>
+        <MovieTitle>{title} { release_date ?
+        ('('+`${release_date}`.substr(0,4)+')'): (
+          null
+        )}
+
+        </MovieTitle>
         <Image 
         style={{height:400}}
         source={{ uri:"https://image.tmdb.org/t/p/w500" +`${poster_path}`}}
