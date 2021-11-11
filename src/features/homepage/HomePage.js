@@ -9,16 +9,21 @@ export const HomePage = () => {
   //create state to hold movie data from API call
   const[movieData, setMovieData] = useState({});
 //search by  movie
-  const [searchMovie, setSearchMovie] = React.useState('');
+  const [searchMovie, setSearchMovie] = useState('');
 
   const onChangeSearch = query => {
     setSearchMovie(query)
-    console.log(searchMovie)
   };
 
+  const onSubmitMovie = () => {
+     if (searchMovie){
+      moviesData(searchMovie)
+     }
+  }
+
   //function to retrieve movies from API
-  const moviesData = () => {
-    getMovies("star wars")
+  const moviesData = (query) => {
+    getMovies(query)
       .then((response) => {
         if (response) {
           console.log(response.data.results);
@@ -31,7 +36,7 @@ export const HomePage = () => {
   };
 
   useEffect(() => {
-  moviesData()
+  moviesData("avengers")
   }, [])
 
   return (
@@ -40,6 +45,7 @@ export const HomePage = () => {
         <SearchBar
         onChangeSearch={onChangeSearch}
         value={searchMovie}
+        onSubmit={onSubmitMovie}
         />
         <ScrollView>
           {
