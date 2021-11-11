@@ -24,14 +24,15 @@ padding-bottom: 10px;
 text-align: center;
 `;
 
-export const Rating = styled.Text`
+export const Rating = styled.View`
 padding-top: 10px;
-text-align: center;
+align-items: center;
+justify-content: center;
+flex-direction: row;
 `;
 
 export const SearchContainer = styled.View`
-margin-left: 15px;
-margin-right: 15px;
+margin: 15px;
 justify-content: center;
 align-items: center;
 `
