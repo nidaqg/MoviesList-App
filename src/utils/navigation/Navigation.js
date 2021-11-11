@@ -2,6 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+
+import { MoviesNavigator } from './MoviesNavigation';
 import { HomePage } from '../../features/homepage/HomePage';
 import { SettingsPage } from '../../features/settings/Settings';
 import { FavouritesPage } from '../../features/favourites/Favourites';
@@ -28,7 +30,7 @@ export const Navigation = () => {
             tabBarInactiveTintColor: '#ABACAD',
           })}
           > 
-      <Tab.Screen name="Movies" component={HomePage} />
+      <Tab.Screen name="Movies" component={MoviesNavigator} />
       <Tab.Screen name="Settings" component={SettingsPage} />
       <Tab.Screen name="Favourites" component={FavouritesPage} />
     </Tab.Navigator>
