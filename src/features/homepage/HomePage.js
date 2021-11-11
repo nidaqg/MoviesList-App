@@ -1,68 +1,38 @@
-import React, { useEffect, useState } from "react";
-import { MoviesContainer } from "./styles";
-import { ScrollView, Text } from "react-native";
+import React, { useContext, useState } from "react";
+import { MoviesContainer, Synopsis } from "./styles";
+import { ScrollView, View } from "react-native";
 import { MovieCardInfo } from "./MovieCardInfo";
-import { getMovies } from "../../utils/APIcalls";
-import { SearchBar } from "../../components/SearchBar";
+import { SearchBar } from "./SearchBar";
+import { ErrorCard } from "./styles";
+import { MoviesContext } from "../../utils/context/MovieContext";
+import { ActivityIndicator, Colors } from "react-native-paper";
 
 export const HomePage = () => {
-  //create state to hold movie data from API call
-  const[movieData, setMovieData] = useState({});
-//search by  movie
-  const [searchMovie, setSearchMovie] = useState('');
-
-//function to handle text change in search bar
-  const onChangeSearch = query => {
-    setSearchMovie(query)
-  };
-
-  //function to handle submit of search term
-  const onSubmitMovie = () => {
-     if (searchMovie){
-      moviesData(searchMovie)
-     }
-  }
-
-  //function to retrieve movies from API
-  const moviesData = (query) => {
-    getMovies(query)
-      .then((response) => {
-        if (response) {
-          console.log(response.data.results);
-          setMovieData(response.data.results)
-        } else {
-          console.log("error");
-        }
-      })
-      .catch((e) => console.log(e));
-  };
-
-  //to populate page on opening
-  useEffect(() => {
-  moviesData("avengers")
-  }, [])
+  const { isLoading, movieData } = useContext(MoviesContext);
+  //hold query from movies searchbar
+  const [searchMovie, setSearchMovie] = useState("");
 
   return (
     <>
       <MoviesContainer>
-        <SearchBar
-        onChangeSearch={onChangeSearch}
-        value={searchMovie}
-        onSubmit={onSubmitMovie}
-        />
+        {isLoading && (
+          <View style={{ position: "absolute", top: "50%", left: "50%" }}>
+            <ActivityIndicator
+              size={50}
+              style={{ marginLeft: -25 }}
+              animating={true}
+              color={Colors.blue300}
+            />
+          </View>
+        )}
+
+        <SearchBar value={searchMovie} />
         <ScrollView>
-          {
-            movieData.length ? (
-              movieData.map(movie => (
-            <MovieCardInfo
-          movie={movie}
-          />
-              ))
-            ) : (
-<Text>No movies found!</Text>
-            )
-          }
-          
+          {movieData.length ? (
+            movieData.map((movie) => <MovieCardInfo movie={movie} />)
+          ) : (
+            null
+          )}
         </ScrollView>
       </MoviesContainer>
     </>

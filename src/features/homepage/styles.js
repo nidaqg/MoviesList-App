@@ -35,5 +35,11 @@ export const SearchContainer = styled.View`
 margin: 15px;
 justify-content: center;
 align-items: center;
+`;
+
+export const ErrorCard = styled(Card)`
+margin: 15px;
+padding: 10px;
+justify-content: center;
 `
 
