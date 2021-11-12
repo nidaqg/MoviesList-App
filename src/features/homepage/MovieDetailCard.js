@@ -1,15 +1,16 @@
 import React from "react";
-import { MovieCard, MovieTitle, Rating, RatingsContainer, Synopsis } from "./styles";
-import { Image, Text } from "react-native";
+import { MovieCard, DetailCard ,MovieTitle, Rating, Synopsis } from "./styles";
+import { Image } from "react-native";
 //imports to use star svg for rating
 import star from '../../../assets/star';
 import { SvgXml } from "react-native-svg";
 
-export const MovieCardInfo = ({movie = {}}) => {
+export const MovieDetailCard = ({movie = {}}) => {
 //deconstruct movie object
   const {
     title = "Movie Title",
     release_date = 2000,
+    overview = "Summary goes here, will probably be 2-3 lines so adding more words to display it",
     vote_average = 5,
     poster_path = "https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg",
     id = 1,
@@ -22,7 +23,7 @@ export const MovieCardInfo = ({movie = {}}) => {
 
   return (
     <>
-      <MovieCard 
+      <DetailCard 
       key={id}
       elevation={7}>
         <MovieTitle>{title} { release_date ?
@@ -36,14 +37,13 @@ export const MovieCardInfo = ({movie = {}}) => {
         source={{ uri:"https://image.tmdb.org/t/p/w500" +`${poster_path}`}}
         resizeMode='contain' 
         />
-        <RatingsContainer>
-          <Text>Rating:</Text>
           <Rating>{ratingArray.map((_,i) => (
-                <SvgXml key ={`star-${id}-${i}`} xml={star} width={30} height={30} />
+                <SvgXml key ={`star-${id}-${i}`} xml={star} width={20} height={20} />
               ))}
               </Rating>
-              </RatingsContainer>
-      </MovieCard>
+          <Synopsis>{overview}</Synopsis>
+
+      </DetailCard>
     </>
   );
 };
