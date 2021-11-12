@@ -3,7 +3,7 @@ import {Card, Title, Paragraph} from 'react-native-paper';
 
 export const MoviesContainer = styled.SafeAreaView`
 flex: 1;
-background-color: white;
+background-color: #06304b;
 `;
 
 export const MovieCard = styled(Card)`

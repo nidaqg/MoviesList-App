@@ -14,7 +14,7 @@ export const MoviesDetail = ({ route, navigation }) => {
           <ButtonContainer>
         <Button
           icon="arrow-left"
-          mode="contained"
+          color="white"
           onPress={() => navigation.goBack()}
         >
           Back
