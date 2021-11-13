@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-export const FavouritesPage = () => {
+export const WatchListPage = () => {
     return(
         <View>
-            <Text>Favourites</Text>
+            <Text>Watch list</Text>
         </View>
     )
 }

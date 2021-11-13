@@ -17,7 +17,14 @@ text-align: center;
 padding-bottom: 10px;
 font-size: 24px;
 font-family: Lato_400Regular;
-`
+`;
+
+export const MovieTitleDetail = styled(Title)`
+text-align: center;
+padding-top: 10px;
+font-size: 24px;
+font-family: Lato_400Regular;
+`;
 
 export const Synopsis = styled(Paragraph)`
 padding-top: 10px;

@@ -1,6 +1,6 @@
 import React from "react";
-import { MovieCard, DetailCard ,MovieTitle, Rating, Synopsis } from "./styles";
-import { Image } from "react-native";
+import { DetailCard ,MovieTitleDetail, Rating, Synopsis } from "./styles";
+import { Card } from "react-native-paper";
 //imports to use star svg for rating
 import star from '../../../assets/star';
 import { SvgXml } from "react-native-svg";
@@ -26,17 +26,21 @@ export const MovieDetailCard = ({movie = {}}) => {
       <DetailCard 
       key={id}
       elevation={7}>
-        <MovieTitle>{title} { release_date ?
+        <Card.Cover 
+        style={{height:500}}
+        source={ poster_path !== null ? (
+          {uri:"https://image.tmdb.org/t/p/w500" +`${poster_path}`}
+         ):(
+         {uri:"https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-image-available-icon-flat-vector.jpg"}
+         )} 
+        resizeMode='cover' 
+        />
+        <MovieTitleDetail>{title} { release_date ?
         ('('+`${release_date}`.substr(0,4)+')'): (
           null
         )}
+        </MovieTitleDetail>
 
-        </MovieTitle>
-        <Image 
-        style={{height:400}}
-        source={{ uri:"https://image.tmdb.org/t/p/w500" +`${poster_path}`}}
-        resizeMode='contain' 
-        />
           <Rating>{ratingArray.map((_,i) => (
                 <SvgXml key ={`star-${id}-${i}`} xml={star} width={20} height={20} />
               ))}
