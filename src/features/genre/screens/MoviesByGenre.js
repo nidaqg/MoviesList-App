@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { GenreContainer } from "../styles";
 import {FadeInView} from "../../../utils/animation/FadeAnimation";
-import { MovieCardInfo } from "../../homepage/MovieCardInfo";
+import { MovieCardInfo } from "../../../components/MovieCardInfo";
 import { getMoviesByGenre } from "../../../utils/APIcalls";
 
 import { ScrollView, View } from "react-native";
@@ -68,7 +68,7 @@ populatePage(id)
             genreMovies.map((movie) => 
             <TouchableOpacity
             onPress={() => {
-                console.log(movie.title)
+                navigation.navigate("GenreMovieDetail", {movie:movie})
             }}
             >
               <FadeInView>

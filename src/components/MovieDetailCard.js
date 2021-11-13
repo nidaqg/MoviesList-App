@@ -2,7 +2,7 @@ import React from "react";
 import { DetailCard ,MovieTitleDetail, Rating, Synopsis } from "./styles";
 import { Card } from "react-native-paper";
 //imports to use star svg for rating
-import star from '../../../assets/star';
+import star from '../../assets/star';
 import { SvgXml } from "react-native-svg";
 
 export const MovieDetailCard = ({movie = {}}) => {

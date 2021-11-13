@@ -5,7 +5,7 @@ import { MovieDetailCard } from "../../../components/MovieDetailCard";
 import { MoviesContainer } from "../../../components/styles";
 import { ButtonContainer } from "../../../components/styles";
 
-export const MoviesDetail = ({ route, navigation }) => {
+export const GenreMovieDetail = ({ route, navigation }) => {
   const { movie } = route.params;
 
   return (

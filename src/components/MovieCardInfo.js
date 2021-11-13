@@ -1,7 +1,7 @@
 import React from "react";
-import { MovieCard, MovieTitle, Rating, RatingsContainer, Synopsis } from "./styles";
+import { MovieCard, MovieTitle, Rating, RatingsContainer} from "./styles";
 //imports to use star svg for rating
-import star from '../../../assets/star';
+import star from '../../assets/star';
 import { SvgXml } from "react-native-svg";
 import { Caption, Card } from "react-native-paper";
 

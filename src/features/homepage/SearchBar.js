@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import { Searchbar } from 'react-native-paper';
-import { SearchContainer } from './styles';
+import { SearchContainer } from '../../components/styles';
 import { MoviesContext } from '../../utils/context/MovieContext';
 
 export const SearchBar =() => {
