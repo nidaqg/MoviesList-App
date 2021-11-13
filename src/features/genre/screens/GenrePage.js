@@ -3,7 +3,7 @@ import { ScrollView, TouchableOpacity } from "react-native";
 import { MoviesContext } from "../../../utils/context/MovieContext";
 import { GenreContainer, GenreCard, GenreTitle} from "../styles";
 
-export const GenrePage = () => {
+export const GenrePage = ({navigation}) => {
 
 const {genreList} =useContext(MoviesContext)
     
@@ -14,7 +14,7 @@ const {genreList} =useContext(MoviesContext)
               {
                   genreList.map(item => (
                       <TouchableOpacity
-                      onPress={()=> console.log(item.name)}
+                      onPress={()=> navigation.navigate("MoviesByGenre", {id:item.id})}
                       >
                       <GenreCard>
                           <GenreTitle

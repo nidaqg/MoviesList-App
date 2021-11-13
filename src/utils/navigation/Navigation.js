@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { MoviesNavigator } from './MoviesNavigation';
 import { SettingsPage } from '../../features/settings/Settings';
 import { WatchListPage } from '../../features/watchlist/WatchListPage';
-import { GenrePage } from '../../features/genre/screens/GenrePage';
+import { GenreNavigator } from './GenreNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,7 +33,7 @@ export const Navigation = () => {
           })}
           > 
       <Tab.Screen name="Search" component={MoviesNavigator} />
-      <Tab.Screen name="Genres" component={GenrePage}/>
+      <Tab.Screen name="Genres" component={GenreNavigator}/>
       <Tab.Screen name="WatchList" component={WatchListPage} />
       <Tab.Screen name="Settings" component={SettingsPage} />
     </Tab.Navigator>

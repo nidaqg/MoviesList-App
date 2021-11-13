@@ -43,24 +43,17 @@ const [genreList, setGenreList] = useState({});
 
 //function to get genre list
 const getGenreListData = () => {
-  setIsLoading(true)
-  setGenreList({})
-  setTimeout(()=> {
 getGenreList()
   .then((response) => {
     if (response) {
       setGenreList(response.data.genres);
-      setIsLoading(false)
     } else {
-        setIsLoading(false)
       console.log("error");
     }
   })
   .catch((e) => {
       console.log(e)
-      setIsLoading(false);
      });
-}, 1000);
 };
 
 useEffect(()=> {
