@@ -39,7 +39,9 @@ export const HomePage = ({navigation}) => {
             }}
             >
               <FadeInView>
-            <MovieCardInfo movie={movie} />
+            <MovieCardInfo 
+            key={movie.id}
+            movie={movie} />
             </FadeInView>
             </TouchableOpacity>
             )

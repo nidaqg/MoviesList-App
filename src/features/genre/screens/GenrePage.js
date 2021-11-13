@@ -16,9 +16,10 @@ const {genreList} =useContext(MoviesContext)
                       <TouchableOpacity
                       onPress={()=> navigation.navigate("MoviesByGenre", {id:item.id})}
                       >
-                      <GenreCard>
+                      <GenreCard
+                      key={item.id}
+                      >
                           <GenreTitle
-                          key={item.id}
                           >{item.name}</GenreTitle>
                           </GenreCard>
                           </TouchableOpacity>

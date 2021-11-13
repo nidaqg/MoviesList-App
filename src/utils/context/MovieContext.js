@@ -26,7 +26,6 @@ const [genreList, setGenreList] = useState({});
    getMovies(query)
      .then((response) => {
        if (response) {
-         console.log(response.data.results);
          setMovieData(response.data.results);
          setIsLoading(false)
        } else {

@@ -72,7 +72,9 @@ populatePage(id)
             }}
             >
               <FadeInView>
-            <MovieCardInfo movie={movie} />
+            <MovieCardInfo
+            key={movie.id}
+             movie={movie} />
             </FadeInView>
             </TouchableOpacity>
             )
