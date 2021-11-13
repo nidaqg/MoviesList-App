@@ -10,4 +10,15 @@ let extras = "&language=en-US&page=1&include_adult=false"
     return (
     axios.get(baseURL + APIkey + "&query=" + query + extras)
     )
+};
+
+export const getGenreList = () => {
+let baseURL = "https://api.themoviedb.org/3/genre/movie/list?api_key="
+let APIkey = API_KEY
+let extras = "&language=en-US"
+
+return (
+    axios.get(baseURL + APIkey)
+)
+
 }

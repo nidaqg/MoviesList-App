@@ -4,7 +4,6 @@ import { MovieCard, MovieTitle, Rating, RatingsContainer, Synopsis } from "./sty
 import star from '../../../assets/star';
 import { SvgXml } from "react-native-svg";
 import { Caption, Card } from "react-native-paper";
-import "../../../assets/no-poster.png";
 
 export const MovieCardInfo = ({movie = {}}) => {
 //deconstruct movie object

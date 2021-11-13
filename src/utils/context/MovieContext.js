@@ -1,5 +1,5 @@
-import React, { createContext, useState} from "react";
-import { getMovies } from "../APIcalls";
+import React, { createContext, useState, useEffect} from "react";
+import { getMovies, getGenreList } from "../APIcalls";
 
 export const MoviesContext = createContext();
 
@@ -8,6 +8,8 @@ export const MoviesContextProvider = ({children}) => {
 const [movieData, setMovieData] = useState({});
 const [isLoading, setIsLoading] = useState(false);
 const [error, setError] = useState(null);
+
+const [genreList, setGenreList] = useState({});
 
   //function to handle submit of search term
   const onSubmitMovie = (query) => {
@@ -39,6 +41,35 @@ const [error, setError] = useState(null);
 }, 1000);
 };
 
+//function to get genre list
+const getGenreListData = () => {
+  setIsLoading(true)
+  setGenreList({})
+  setTimeout(()=> {
+getGenreList()
+  .then((response) => {
+    if (response) {
+      setGenreList(response.data.genres);
+      setIsLoading(false)
+    } else {
+        setIsLoading(false)
+      console.log("error");
+    }
+  })
+  .catch((e) => {
+      console.log(e)
+      setIsLoading(false);
+     });
+}, 1000);
+};
+
+useEffect(()=> {
+getGenreListData()
+},[])
+
+
+
+
 
     return (
         <MoviesContext.Provider
@@ -46,6 +77,7 @@ const [error, setError] = useState(null);
         onSubmitMovie,
         movieData,
         isLoading,
+        genreList
         }}
         >{children}</MoviesContext.Provider>
     )
