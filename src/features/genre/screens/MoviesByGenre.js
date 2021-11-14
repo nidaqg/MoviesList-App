@@ -4,9 +4,10 @@ import { GenreContainer } from "../styles";
 import {FadeInView} from "../../../utils/animation/FadeAnimation";
 import { MovieCardInfo } from "../../../components/MovieCardInfo";
 import { getMoviesByGenre } from "../../../utils/APIcalls";
+import { ButtonContainer } from "../../../components/styles";
 
 import { ScrollView, View } from "react-native";
-import { ActivityIndicator, Colors } from "react-native-paper";
+import { ActivityIndicator, Colors, Button } from "react-native-paper";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const MoviesByGenre = ({navigation, route}) => {
@@ -62,6 +63,17 @@ populatePage(id)
             />
           </View>
         )}
+
+<ButtonContainer>
+        <Button
+          icon="arrow-left"
+          color="white"
+          onPress={() => navigation.goBack()}
+        >
+          Back
+        </Button>
+        </ButtonContainer>
+
 
         <ScrollView>
           {genreMovies.length ? (
