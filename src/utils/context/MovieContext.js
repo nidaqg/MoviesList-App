@@ -14,7 +14,8 @@ const [genreList, setGenreList] = useState({});
 const [isGenreLoading, setIsGenreLoading] = useState(false)
 
 //creating state for movie data from trending
-const [trending, setTrending] = useState({})
+const [trending, setTrending] = useState({});
+const [isTrendingLoading, setIsTrendingLoading] = useState(false);
 
   //function to handle submit of search term
   const onSubmitMovie = (query) => {
@@ -89,16 +90,20 @@ getMoviesByGenre(query)
 
 //retreive trending movies
 const getTrendingData = () => {
+  setIsTrendingLoading(true)
   getTrendingMovies()
     .then((response) => {
       if (response) {
         setTrending(response.data.results);
+        setIsTrendingLoading(false);
       } else {
         console.log("error");
+        setIsTrendingLoading(false);
       }
     })
     .catch((e) => {
         console.log(e)
+        setIsTrendingLoading(false);
        });
   };
   
@@ -117,7 +122,8 @@ const getTrendingData = () => {
         getGenreMovies,
         genreMovies,
         isGenreLoading,
-        trending
+        trending,
+        isTrendingLoading
         }}
         >{children}</MoviesContext.Provider>
     )

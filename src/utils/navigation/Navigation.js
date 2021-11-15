@@ -36,8 +36,8 @@ export const Navigation = () => {
             tabBarInactiveTintColor: '#ABACAD',
           })}
           > 
-      <Tab.Screen name="Search" component={MoviesNavigator} />
       <Tab.Screen name="Trending" component={TrendingNavigator}/>
+      <Tab.Screen name="Search" component={MoviesNavigator} />
       <Tab.Screen name="Genres" component={GenreNavigator}/>
       <Tab.Screen name="WatchList" component={WatchListPage} />
       <Tab.Screen name="Settings" component={SettingsPage} />

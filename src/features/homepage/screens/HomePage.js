@@ -5,7 +5,6 @@ import {FadeInView} from "../../../utils/animation/FadeAnimation"
 import { ScrollView, View } from "react-native";
 import { MovieCardInfo } from "../../../components/MovieCardInfo";
 import { SearchBar } from "../SearchBar";
-import { ErrorCard } from "../../../components/styles";
 import { MoviesContext } from "../../../utils/context/MovieContext";
 import { ActivityIndicator, Colors } from "react-native-paper";
 import { TouchableOpacity } from "react-native-gesture-handler";
