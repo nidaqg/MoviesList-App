@@ -55,6 +55,7 @@ populatePage(id)
           {genreMovies.length ? (
             genreMovies.map((movie) => 
             <TouchableOpacity
+            key={movie.id}
             onPress={() => {
                 navigation.navigate("GenreMovieDetail", {movie:movie})
             }}

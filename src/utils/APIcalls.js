@@ -28,6 +28,12 @@ export const getMoviesByGenre = (query) => {
    return (
        axios.get(baseURL + APIkey + "&with_genres=" + query + extras)
    )
-   
-   
-}
+}; 
+
+export const getTrendingMovies = () => {
+    let baseURL = "https://api.themoviedb.org/3/trending/movie/week?api_key="
+    let APIkey = API_KEY
+ 
+    return (
+        axios.get(baseURL + APIkey)
+    )};

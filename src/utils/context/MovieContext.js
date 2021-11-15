@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect} from "react";
-import { getMovies, getGenreList, getMoviesByGenre } from "../APIcalls";
+import { getMovies, getGenreList, getMoviesByGenre, getTrendingMovies } from "../APIcalls";
 
 export const MoviesContext = createContext();
 
@@ -7,12 +7,14 @@ export const MoviesContextProvider = ({children}) => {
 //creating state for movie data
 const [movieData, setMovieData] = useState({});
 const [isLoading, setIsLoading] = useState(false);
-const [error, setError] = useState(null);
 
 //creating state for movie data from genre search
 const [genreMovies, setGenreMovies] = useState({});
 const [genreList, setGenreList] = useState({});
 const [isGenreLoading, setIsGenreLoading] = useState(false)
+
+//creating state for movie data from trending
+const [trending, setTrending] = useState({})
 
   //function to handle submit of search term
   const onSubmitMovie = (query) => {
@@ -60,6 +62,7 @@ getGenreList()
 
 useEffect(()=> {
 getGenreListData()
+getTrendingData()
 },[])
 
 //function to get movies by genre from API
@@ -84,6 +87,22 @@ getMoviesByGenre(query)
 }, 1000);
 }
 
+//retreive trending movies
+const getTrendingData = () => {
+  getTrendingMovies()
+    .then((response) => {
+      if (response) {
+        setTrending(response.data.results);
+      } else {
+        console.log("error");
+      }
+    })
+    .catch((e) => {
+        console.log(e)
+       });
+  };
+  
+
 
 
 
@@ -97,7 +116,8 @@ getMoviesByGenre(query)
         genreList,
         getGenreMovies,
         genreMovies,
-        isGenreLoading
+        isGenreLoading,
+        trending
         }}
         >{children}</MoviesContext.Provider>
     )

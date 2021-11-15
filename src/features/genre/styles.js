@@ -14,6 +14,7 @@ export const GenreCard = styled(Card)`
   padding: 30px;
   align-items: center;
   justify-content: center;
+
 `;
 
 export const GenreTitle = styled(Title)`

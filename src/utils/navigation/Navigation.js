@@ -7,6 +7,8 @@ import { MoviesNavigator } from './MoviesNavigation';
 import { SettingsPage } from '../../features/settings/Settings';
 import { WatchListPage } from '../../features/watchlist/WatchListPage';
 import { GenreNavigator } from './GenreNavigation';
+import { Trending } from '../../features/trending/screens/Trending';
+import { TrendingNavigator } from './TrendingNavigation';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +27,8 @@ export const Navigation = () => {
                 iconName = 'list';
               } else if ( route.name === 'Genres') {
                 iconName = 'film';
+              } else if (route.name === 'Trending') {
+                iconName='star';
               }
             return <Ionicons name={iconName} size={size} color={color} />;
             },
@@ -33,6 +37,7 @@ export const Navigation = () => {
           })}
           > 
       <Tab.Screen name="Search" component={MoviesNavigator} />
+      <Tab.Screen name="Trending" component={TrendingNavigator}/>
       <Tab.Screen name="Genres" component={GenreNavigator}/>
       <Tab.Screen name="WatchList" component={WatchListPage} />
       <Tab.Screen name="Settings" component={SettingsPage} />
