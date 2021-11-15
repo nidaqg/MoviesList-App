@@ -4,6 +4,8 @@ import { MovieCard, MovieTitle, Rating, RatingsContainer} from "./styles";
 import star from '../../assets/star';
 import { SvgXml } from "react-native-svg";
 import { Caption, Card } from "react-native-paper";
+import { WatchListHeart } from "./WatchListHeart";
+import { View } from "react-native";
 
 export const MovieCardInfo = ({movie = {}}) => {
 //deconstruct movie object
@@ -25,12 +27,15 @@ export const MovieCardInfo = ({movie = {}}) => {
       <MovieCard 
       key={id}
       elevation={7}>
+
         <MovieTitle>{title} { release_date ?
         ('('+`${release_date}`.substr(0,4)+')'): (
           null
         )}
-
         </MovieTitle>
+        
+        <View>
+          <WatchListHeart movie={movie}/>
         <Card.Cover 
         style={{height:500}}
         source={ poster_path !== null ? (
@@ -40,6 +45,9 @@ export const MovieCardInfo = ({movie = {}}) => {
         )}
         resizeMode='cover' 
         />
+        </View>
+
+<View>
         <RatingsContainer>
           <Caption>Rating:</Caption>
           <Rating>{ratingArray.map((_,i) => (
@@ -47,6 +55,7 @@ export const MovieCardInfo = ({movie = {}}) => {
               ))}
               </Rating>
               </RatingsContainer>
+              </View>
       </MovieCard>
     </>
   );

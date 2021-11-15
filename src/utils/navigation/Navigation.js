@@ -5,9 +5,8 @@ import { Ionicons } from '@expo/vector-icons';
 
 import { MoviesNavigator } from './MoviesNavigation';
 import { SettingsPage } from '../../features/settings/Settings';
-import { WatchListPage } from '../../features/watchlist/WatchListPage';
+import { WatchListPage } from '../../features/watchlist/screens/WatchListPage';
 import { GenreNavigator } from './GenreNavigation';
-import { Trending } from '../../features/trending/screens/Trending';
 import { TrendingNavigator } from './TrendingNavigation';
 
 const Tab = createBottomTabNavigator();

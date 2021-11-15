@@ -2,7 +2,6 @@ import React, { useContext} from "react";
 import { MoviesContainer} from "../../../components/styles";
 import { ActivityIndicator, Colors } from "react-native-paper";
 
-
 import {FadeInView} from "../../../utils/animation/FadeAnimation"
 import { ScrollView, View } from "react-native";
 import { MovieCardInfo } from "../../../components/MovieCardInfo";
@@ -27,7 +26,6 @@ export const Trending = ({navigation}) => {
           </View>
         )}
 
-
         <ScrollView>
           {trending.length ? (
             trending.map((movie) => 
@@ -42,6 +40,8 @@ export const Trending = ({navigation}) => {
             key={movie.id}
             movie={movie} />
             </FadeInView>
+
+
             </TouchableOpacity>
             )
           ) : (
