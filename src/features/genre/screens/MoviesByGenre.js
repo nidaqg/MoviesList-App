@@ -2,13 +2,12 @@ import React, { useEffect, useContext } from "react";
 
 import { GenreContainer } from "../styles";
 import {FadeInView} from "../../../utils/animation/FadeAnimation";
-import { MovieCardInfo } from "../../../components/MovieCardInfo";
 import { ButtonContainer } from "../../../components/styles";
 import { MoviesContext } from "../../../utils/context/MovieContext";
+import {GenreMovieCardInfo} from "../../../components/GenreMovieCardInfo"
 
 import { ScrollView, View } from "react-native";
 import { ActivityIndicator, Colors, Button } from "react-native-paper";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const MoviesByGenre = ({navigation, route}) => {
 
@@ -54,18 +53,12 @@ populatePage(id)
         <ScrollView>
           {genreMovies.length ? (
             genreMovies.map((movie) => 
-            <TouchableOpacity
-            key={movie.id}
-            onPress={() => {
-                navigation.navigate("GenreMovieDetail", {movie:movie})
-            }}
-            >
               <FadeInView>
-            <MovieCardInfo
+            <GenreMovieCardInfo
+            clicked={navigation.navigate}
             key={movie.id}
              movie={movie} />
             </FadeInView>
-            </TouchableOpacity>
             )
           ) : (
             null

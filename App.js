@@ -23,12 +23,13 @@ export default function App() {
   
   return (
     <>
-    <MoviesContextProvider>
       <WatchListContextProvider>
+    <MoviesContextProvider>
     <Navigation/>
     <StatusBar style="auto" />
-    </WatchListContextProvider>
     </MoviesContextProvider>
+    </WatchListContextProvider>
+
     </>
   );
 }

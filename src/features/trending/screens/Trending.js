@@ -2,11 +2,10 @@ import React, { useContext} from "react";
 import { MoviesContainer} from "../../../components/styles";
 import { ActivityIndicator, Colors } from "react-native-paper";
 
+import {TrendingMovieCardInfo} from "../../../components/TrendingMovieCardInfo"
 import {FadeInView} from "../../../utils/animation/FadeAnimation"
 import { ScrollView, View } from "react-native";
-import { MovieCardInfo } from "../../../components/MovieCardInfo";
 import { MoviesContext } from "../../../utils/context/MovieContext";
-import { TouchableOpacity } from "react-native-gesture-handler";
 
 export const Trending = ({navigation}) => {
   const { trending, isTrendingLoading} = useContext(MoviesContext);
@@ -29,20 +28,12 @@ export const Trending = ({navigation}) => {
         <ScrollView>
           {trending.length ? (
             trending.map((movie) => 
-            <TouchableOpacity
-            key={movie.id}
-            onPress={() => {
-              navigation.navigate("TrendingMovieDetail", {movie: movie,})
-            }}
-            >
               <FadeInView>
-            <MovieCardInfo 
+            <TrendingMovieCardInfo 
+            clicked={navigation.navigate}
             key={movie.id}
             movie={movie} />
             </FadeInView>
-
-
-            </TouchableOpacity>
             )
           ) : (
             null

@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { WatchListContext } from "../utils/context/WatchListContext";
 import styled from "styled-components/native";
 import { AntDesign } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
 
-const WatchListButton = styled.TouchableOpacity`
+const WatchListButton = styled(TouchableOpacity)`
   background-color: transparent;
   border-color: #20232a;
   position: absolute;

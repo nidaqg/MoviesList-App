@@ -32,17 +32,12 @@ export const HomePage = ({navigation}) => {
         <ScrollView>
           {movieData.length ? (
             movieData.map((movie) => 
-            <TouchableOpacity
-            onPress={() => {
-              navigation.navigate("MoviesDetail", {movie: movie,})
-            }}
-            >
               <FadeInView>
             <MovieCardInfo 
+            clicked={navigation.navigate}
             key={movie.id}
             movie={movie} />
             </FadeInView>
-            </TouchableOpacity>
             )
           ) : (
             null

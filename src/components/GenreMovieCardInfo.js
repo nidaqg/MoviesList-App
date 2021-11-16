@@ -7,7 +7,7 @@ import { Caption, Card } from "react-native-paper";
 import { WatchListHeart } from "./WatchListHeart";
 import { TouchableOpacity, View } from "react-native";
 
-export const MovieCardInfo = ({movie = {}, clicked}) => {
+export const GenreMovieCardInfo = ({movie = {}, clicked}) => {
 //deconstruct movie object
   const {
     title = "Movie Title",
@@ -28,7 +28,7 @@ export const MovieCardInfo = ({movie = {}, clicked}) => {
       key={id}
       elevation={7}>
         <TouchableOpacity
-        onPress={()=>clicked("MoviesDetail", {movie: movie,})}
+        onPress={()=>clicked("GenreMovieDetail", {movie: movie,})}
         >
 
         <MovieTitle>{title} { release_date ?
