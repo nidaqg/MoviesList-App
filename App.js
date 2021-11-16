@@ -5,7 +5,7 @@ import { MoviesContextProvider } from './src/utils/context/MovieContext';
 import { WatchListContextProvider } from './src/utils/context/WatchListContext';
 import { Navigation } from './src/utils/navigation/Navigation';
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
-import { useFonts as useMaShan, MaShanZheng_400Regular } from '@expo-google-fonts/ma-shan-zheng';
+import { useFonts as useOswald, Oswald_700Bold} from '@expo-google-fonts/oswald';
 
 
 export default function App() {
@@ -14,10 +14,10 @@ export default function App() {
     Lato_400Regular,
   });
 
-  const [MaShanZhengLoaded] = useMaShan({
-    MaShanZheng_400Regular})
+  const [oswaldLoaded] = useOswald({
+    Oswald_700Bold})
 
-  if (!latoLoaded || !MaShanZhengLoaded) {
+  if (!latoLoaded || !oswaldLoaded) {
     return null;
   }
   

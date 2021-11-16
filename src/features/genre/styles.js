@@ -19,8 +19,8 @@ border-radius: 20px;
 
 export const GenreTitle = styled.Text`
 text-align: center;
-font-size: 65px;
-font-family: MaShanZheng_400Regular;
+font-size: 40px;
+font-family: Oswald_700Bold;
 `;
 
 
