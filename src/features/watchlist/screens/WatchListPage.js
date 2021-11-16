@@ -27,13 +27,16 @@ export const WatchListPage = () => {
         <ScrollView>
           {watchList.length ? (
             watchList.map((movie) => 
-            <View style={{marginTop:15}}>
+            <View 
+            key={movie.id}
+            style={{marginTop:15}}>
             <MovieDetailCard movie={movie} />
             </View>)
           ) : (
             <NoInfoCard
               style={{
                 flex: 1,
+                paddingTop: 50,
                 alignItems: "center",
                 justifyContent: "center",
               }}

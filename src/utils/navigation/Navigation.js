@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
 import { MoviesNavigator } from './MoviesNavigation';
-import { SettingsPage } from '../../features/settings/Settings';
+import { SettingsPage } from '../../features/settings/screens/SettingsPage';
 import { WatchListPage } from '../../features/watchlist/screens/WatchListPage';
 import { GenreNavigator } from './GenreNavigation';
 import { TrendingNavigator } from './TrendingNavigation';
@@ -23,7 +23,7 @@ export const Navigation = () => {
               } else if (route.name === 'Settings') {
                 iconName = 'settings-outline';
               } else if (route.name === 'WatchList') {
-                iconName = 'list';
+                iconName = 'heart';
               } else if ( route.name === 'Genres') {
                 iconName = 'film';
               } else if (route.name === 'Trending') {

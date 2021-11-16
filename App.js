@@ -5,6 +5,7 @@ import { MoviesContextProvider } from './src/utils/context/MovieContext';
 import { WatchListContextProvider } from './src/utils/context/WatchListContext';
 import { Navigation } from './src/utils/navigation/Navigation';
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+import { useFonts as useMaShan, MaShanZheng_400Regular } from '@expo-google-fonts/ma-shan-zheng';
 
 
 export default function App() {
@@ -13,7 +14,10 @@ export default function App() {
     Lato_400Regular,
   });
 
-  if (!latoLoaded) {
+  const [MaShanZhengLoaded] = useMaShan({
+    MaShanZheng_400Regular})
+
+  if (!latoLoaded || !MaShanZhengLoaded) {
     return null;
   }
   
