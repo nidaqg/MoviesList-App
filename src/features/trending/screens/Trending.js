@@ -2,14 +2,13 @@ import React, { useContext} from "react";
 import { MoviesContainer} from "../../../components/styles";
 import { ActivityIndicator, Colors } from "react-native-paper";
 
-import {TrendingMovieCardInfo} from "../../../components/TrendingMovieCardInfo"
+import {MovieCardInfo} from "../../../components/MovieCardInfo"
 import {FadeInView} from "../../../utils/animation/FadeAnimation"
 import { ScrollView, View } from "react-native";
 import { MoviesContext } from "../../../utils/context/MovieContext";
 
 export const Trending = ({navigation}) => {
   const { trending, isTrendingLoading} = useContext(MoviesContext);
-  //hold query from movies searchbar
 
   return (
     <>
@@ -30,8 +29,9 @@ export const Trending = ({navigation}) => {
             trending.map((movie) => 
               <FadeInView
               key={movie.id}>
-            <TrendingMovieCardInfo 
+            <MovieCardInfo 
             clicked={navigation.navigate}
+            goToPage={"TrendingMovieDetail"}
             key={movie.id}
             movie={movie} />
             </FadeInView>

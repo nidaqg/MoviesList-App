@@ -4,7 +4,7 @@ import { GenreContainer } from "../styles";
 import {FadeInView} from "../../../utils/animation/FadeAnimation";
 import { ButtonContainer } from "../../../components/styles";
 import { MoviesContext } from "../../../utils/context/MovieContext";
-import {GenreMovieCardInfo} from "../../../components/GenreMovieCardInfo"
+import {MovieCardInfo} from "../../../components/MovieCardInfo"
 
 import { ScrollView, View } from "react-native";
 import { ActivityIndicator, Colors, Button } from "react-native-paper";
@@ -54,8 +54,9 @@ populatePage(id)
           {genreMovies.length ? (
             genreMovies.map((movie) => 
               <FadeInView>
-            <GenreMovieCardInfo
+            <MovieCardInfo
             clicked={navigation.navigate}
+            goToPage={"GenreMovieDetail"}
             key={movie.id}
              movie={movie} />
             </FadeInView>

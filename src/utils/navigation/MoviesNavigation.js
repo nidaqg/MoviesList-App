@@ -10,7 +10,7 @@ export const MoviesNavigator = () => {
       <Stack.Navigator
       screenOptions={{ ...TransitionPresets.SlideFromRightIOS, headerShown:false }}
       >
-        <Stack.Screen name="Main" component={HomePage} />
+        <Stack.Screen name="HomePage" component={HomePage} />
         <Stack.Screen name="MoviesDetail" component={MoviesDetail} />
       </Stack.Navigator>
     );

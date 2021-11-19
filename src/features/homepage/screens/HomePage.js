@@ -35,6 +35,7 @@ export const HomePage = ({navigation}) => {
               <FadeInView>
             <MovieCardInfo 
             clicked={navigation.navigate}
+            goToPage={"MoviesDetail"}
             key={movie.id}
             movie={movie} />
             </FadeInView>

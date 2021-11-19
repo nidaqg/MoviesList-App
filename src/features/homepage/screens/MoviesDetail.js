@@ -15,7 +15,7 @@ export const MoviesDetail = ({ route, navigation }) => {
         <Button
           icon="arrow-left"
           color="white"
-          onPress={() => navigation.goBack()}
+          onPress={() => navigation.navigate("HomePage")}
         >
           Back
         </Button>
