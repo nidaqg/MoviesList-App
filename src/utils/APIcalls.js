@@ -37,3 +37,13 @@ export const getTrendingMovies = () => {
     return (
         axios.get(baseURL + APIkey)
     )};
+
+export const getMovieCredits = (id) => {
+    let baseURL = "https://api.themoviedb.org/3/movie/"
+    let APIkey = API_KEY
+
+    return (
+        axios.get(baseURL + id + "/credits?api_key=" + APIkey + "&language=en-US")
+    )
+
+}

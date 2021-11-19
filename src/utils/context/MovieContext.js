@@ -4,6 +4,7 @@ import {
   getGenreList,
   getMoviesByGenre,
   getTrendingMovies,
+  getMovieCredits,
 } from "../APIcalls";
 
 export const MoviesContext = createContext();
@@ -21,6 +22,10 @@ export const MoviesContextProvider = ({ children }) => {
   //creating state for movie data from trending
   const [trending, setTrending] = useState({});
   const [isTrendingLoading, setIsTrendingLoading] = useState(false);
+
+  //creating state for movie credits
+  const[cast, setCast] = useState([]);
+
 
   //function to handle submit of search term
   const onSubmitMovie = (query) => {
@@ -93,7 +98,7 @@ export const MoviesContextProvider = ({ children }) => {
     }, 1000);
   };
 
-  //retreive trending movies
+  //retrieve trending movies
   const getTrendingData = () => {
     setIsTrendingLoading(true);
     getTrendingMovies()
@@ -112,6 +117,26 @@ export const MoviesContextProvider = ({ children }) => {
       });
   };
 
+  //function to retrieve movie credits
+  const getCredits = (id) => {
+      getMovieCredits(id)
+        .then((response) => {
+          if (response) {
+            let actors = [];
+            response.data.cast.forEach(actor => {
+              actors.push(actor.name)
+            });
+            setCast(actors.slice(0,10))
+            console.log(actors)
+          } else {
+            console.log("error");
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+  };
+
   return (
     <MoviesContext.Provider
       value={{
@@ -124,6 +149,8 @@ export const MoviesContextProvider = ({ children }) => {
         isGenreLoading,
         trending,
         isTrendingLoading,
+        getCredits,
+        cast
       }}
     >
       {children}

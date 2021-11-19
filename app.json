@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MoviesList-App",
-    "slug": "MoviesList-App",
+    "name": "MovieLog-App",
+    "slug": "MovieLog-App",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/logo.png",

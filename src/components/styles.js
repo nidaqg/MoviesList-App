@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {Card, Title, Paragraph} from 'react-native-paper';
+import {Card, Title, Paragraph, Caption} from 'react-native-paper';
 
 export const MoviesContainer = styled.SafeAreaView`
 flex: 1;
@@ -71,4 +71,8 @@ margin-top: 5px;
 padding: 10px;
 justify-content: center;
 `;
+
+export const Cast = styled(Caption)`
+text-align: center;
+`
 

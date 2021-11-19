@@ -1,5 +1,5 @@
 import React from "react";
-import { DetailCard ,MovieTitleDetail, Rating, Synopsis } from "./styles";
+import { DetailCard ,MovieTitleDetail, Rating, Synopsis, Cast } from "./styles";
 import { Card } from "react-native-paper";
 //imports to use star svg for rating
 import star from '../../assets/star';
@@ -7,7 +7,7 @@ import { SvgXml } from "react-native-svg";
 import { WatchListHeart } from "./WatchListHeart";
 import { View } from "react-native";
 
-export const MovieDetailCard = ({movie = {}}) => {
+export const MovieDetailCard = ({movie = {}, cast}) => {
 //deconstruct movie object
   const {
     title = "Movie Title",
@@ -51,6 +51,17 @@ export const MovieDetailCard = ({movie = {}}) => {
               ))}
               </Rating>
           <Synopsis>{overview}</Synopsis>
+          {
+            cast ? (
+              <>
+          <Cast>Starring:</Cast>
+          <Cast>{cast.join(", ")}</Cast>
+          </>
+            ) : (
+              null
+            )
+          }
+          
 
       </DetailCard>
     </>

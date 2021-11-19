@@ -28,7 +28,8 @@ export const Trending = ({navigation}) => {
         <ScrollView>
           {trending.length ? (
             trending.map((movie) => 
-              <FadeInView>
+              <FadeInView
+              key={movie.id}>
             <TrendingMovieCardInfo 
             clicked={navigation.navigate}
             key={movie.id}
