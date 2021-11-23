@@ -6,6 +6,8 @@ import { WatchListContextProvider } from './src/utils/context/WatchListContext';
 import { Navigation } from './src/utils/navigation/Navigation';
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { useFonts as useOswald, Oswald_700Bold} from '@expo-google-fonts/oswald';
+import { useFonts as useKaushan, KaushanScript_400Regular } from '@expo-google-fonts/kaushan-script';
+
 
 
 export default function App() {
@@ -17,7 +19,10 @@ export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_700Bold})
 
-  if (!latoLoaded || !oswaldLoaded) {
+  const [kaushanloaded] = useKaushan({
+    KaushanScript_400Regular})
+
+  if (!latoLoaded || !oswaldLoaded || !kaushanloaded) {
     return null;
   }
   

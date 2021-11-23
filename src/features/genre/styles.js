@@ -11,16 +11,16 @@ border-radius: 20px;
   margin-left: 10px;
   margin-right:10px;
   margin-top: 15px;
-  padding: 20px;
+  padding: 15px;
   align-items: center;
   justify-content: center;
-  background-color: rgba(246, 239, 243, 0.7)
+  background-color: rgba(246, 239, 243, 0.8)
 `;
 
 export const GenreTitle = styled.Text`
 text-align: center;
-font-size: 40px;
-font-family: Oswald_700Bold;
+font-size: 45px;
+font-family: KaushanScript_400Regular;
 `;
 
 

@@ -32,7 +32,9 @@ export const HomePage = ({navigation}) => {
         <ScrollView>
           {movieData.length ? (
             movieData.map((movie) => 
-              <FadeInView>
+              <FadeInView
+              key={movie.id}
+              >
             <MovieCardInfo 
             clicked={navigation.navigate}
             goToPage={"MoviesDetail"}

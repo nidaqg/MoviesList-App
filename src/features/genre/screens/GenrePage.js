@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { ImageBackground, ScrollView, TouchableOpacity, View } from "react-native";
+import { ScrollView, TouchableOpacity } from "react-native";
 import { MoviesContext } from "../../../utils/context/MovieContext";
 import { GenreContainer, GenreCard, GenreTitle, CardCover, GenreCardContainer } from "../styles";
+import {Card} from "react-native-paper";
 
 export const GenrePage = ({ navigation }) => {
   const { genreList } = useContext(MoviesContext);

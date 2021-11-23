@@ -127,7 +127,6 @@ export const MoviesContextProvider = ({ children }) => {
               actors.push(actor.name)
             });
             setCast(actors.slice(0,10))
-            console.log(actors)
           } else {
             console.log("error");
           }

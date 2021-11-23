@@ -17,7 +17,7 @@ export const SettingsPage = () => {
 
         
             <List.Item
-            title="Thank you for choosing Movie Log!"
+            title="Thank you for choosing MovieLog!"
             left={props => <List.Icon {...props} icon="star" />}
             />
             <List.Item

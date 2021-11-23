@@ -53,7 +53,9 @@ populatePage(id)
         <ScrollView>
           {genreMovies.length ? (
             genreMovies.map((movie) => 
-              <FadeInView>
+              <FadeInView
+              key={movie.id}
+              >
             <MovieCardInfo
             clicked={navigation.navigate}
             goToPage={"GenreMovieDetail"}

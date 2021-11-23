@@ -8,6 +8,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/kaushan-script": "^0.2.0",
     "@expo-google-fonts/lato": "^0.2.0",
     "@expo-google-fonts/ma-shan-zheng": "^0.2.0",
     "@expo-google-fonts/oswald": "^0.2.0",
