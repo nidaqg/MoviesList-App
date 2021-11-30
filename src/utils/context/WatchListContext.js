@@ -26,6 +26,7 @@ const addToWatchList = (movie) => {
   useEffect (() => {
   getWatchList()
   }, [])
+  
   //store to async storage
   const storeWatchList = async (value) => {
     try {

@@ -20,7 +20,7 @@ export const Navigation = () => {
               let iconName;
               if (route.name === 'Search') {
                 iconName = 'search';
-              } else if (route.name === 'Settings') {
+              } else if (route.name === 'About Us') {
                 iconName = 'settings-outline';
               } else if (route.name === 'WatchList') {
                 iconName = 'heart';
@@ -39,7 +39,7 @@ export const Navigation = () => {
       <Tab.Screen name="Search" component={MoviesNavigator} />
       <Tab.Screen name="Genres" component={GenreNavigator}/>
       <Tab.Screen name="WatchList" component={WatchListPage} />
-      <Tab.Screen name="Settings" component={SettingsPage} />
+      <Tab.Screen name="About Us" component={SettingsPage} />
     </Tab.Navigator>
     </NavigationContainer>
   );

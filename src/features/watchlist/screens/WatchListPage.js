@@ -10,6 +10,7 @@ const NoInfoCard = styled(View)`
   align-items: center;
   justify-content: center;
   padding: 20px;
+  padding-top: 50px;
 `;
 
 const Info = styled(Text)`
@@ -33,14 +34,7 @@ export const WatchListPage = () => {
             <MovieDetailCard movie={movie} />
             </View>)
           ) : (
-            <NoInfoCard
-              style={{
-                flex: 1,
-                paddingTop: 50,
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
+            <NoInfoCard>
               <Info>No Movies in Watch List!</Info>
             </NoInfoCard>
           )}
