@@ -1,28 +1,13 @@
 import React, { useContext, useState } from "react";
 import { MoviesContainer} from "../../../components/styles";
-import styled from 'styled-components/native';
 
 import {FadeInView} from "../../../utils/animation/FadeAnimation"
-import { ScrollView, View, Text } from "react-native";
+import { ScrollView, View } from "react-native";
 import { MovieCardInfo } from "../../../components/MovieCardInfo";
 import { SearchBar } from "../SearchBar";
 import { MoviesContext } from "../../../utils/context/MovieContext";
 import { ActivityIndicator, Colors, Avatar } from "react-native-paper";
-
-const SearchInfoCard = styled(View)`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-`;
-
-const Info = styled(Text)`
-  padding-top:20px;
-  font-size: 24px;
-  font-family: Lato_400Regular;
-  color: white;
-`;
-
+import { SearchInfoCard, Info } from "../styles";
 
 export const HomePage = ({navigation}) => {
   const { isLoading, movieData } = useContext(MoviesContext);
