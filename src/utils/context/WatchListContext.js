@@ -4,23 +4,30 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 export const WatchListContext = createContext();
 
 export const WatchListContextProvider = ({children}) => {
-const [watchList, setWatchList] = useState([]);
+const [watchList, setWatchList] = useState(null);
 
 const addToWatchList = (movie) => {
+  if(watchList !== null) {
     setWatchList([...watchList, movie]);
+  } else {
+    setWatchList([movie])
+  }
   };
 
   //function for removing a restaurant from favourites
   const removeFromWatchList = (movie) => {
-    //filter out restuarants that have the same place id to avpoid duplication
+    //filter out movie by id
+    if (watchList !== null) {
     const newWatchList = watchList.filter(
       (x) => x.id !== movie.id
     );
     setWatchList(newWatchList);
+    }
   };
 
   useEffect(() => {
-   storeWatchList(watchList)
+    watchList !== null ?
+   storeWatchList(watchList) : null
   },[watchList])
 
   useEffect (() => {
@@ -41,6 +48,7 @@ const addToWatchList = (movie) => {
 const getWatchList = async () => {
   try {
     const value = await AsyncStorage.getItem('@watchlist')
+    console.log("GET", value)
     if(value !== null) {
       setWatchList(JSON.parse(value))
     }

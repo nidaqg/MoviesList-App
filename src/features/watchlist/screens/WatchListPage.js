@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, {useContext } from "react";
 import styled from "styled-components/native";
 import { MoviesContainer } from "../../../components/styles";
 import { WatchListContext } from "../../../utils/context/WatchListContext";
@@ -26,7 +26,7 @@ export const WatchListPage = () => {
     <>
       <MoviesContainer>
         <ScrollView>
-          {watchList.length ? (
+          {watchList !== null ? (
             watchList.map((movie) => 
             <View 
             key={movie.id}

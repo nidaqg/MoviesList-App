@@ -19,7 +19,8 @@ export const WatchListHeart = ({ movie }) => {
     useContext(WatchListContext);
 
   //to check if current movie is in watchlist
-  const isAdded = watchList.find((r) => r.id === movie.id);
+  const isAdded = (watchList !== null ? 
+    watchList.find((r) => r.id === movie.id): null);
 
   return (
     <WatchListButton

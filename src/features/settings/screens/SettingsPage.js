@@ -14,16 +14,12 @@ export const SettingsPage = () => {
         />
         </Header>
         
-
-        
             <List.Item
             title="Thank you for choosing MovieLog!"
-            left={props => <List.Icon {...props} icon="star" />}
             />
             <List.Item
             title="Powered by the TMDB API"
             description="This product uses the TMDB API but is not endorsed or certified by TMDB."
-            left={props => <List.Icon {...props} icon="star" />}
             />
             <Info>
             <Image 
