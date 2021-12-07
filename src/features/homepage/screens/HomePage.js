@@ -11,8 +11,6 @@ import { SearchInfoCard, Info } from "../styles";
 
 export const HomePage = ({navigation}) => {
   const { isLoading, movieData } = useContext(MoviesContext);
-  //hold query from movies searchbar
-  const [searchMovie, setSearchMovie] = useState("");
 
   return (
     <>
@@ -28,7 +26,7 @@ export const HomePage = ({navigation}) => {
           </View>
         )}
 
-        <SearchBar value={searchMovie} />
+        <SearchBar />
         <ScrollView>
           {movieData.length ? (
             movieData.map((movie) => 
