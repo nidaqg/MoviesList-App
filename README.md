@@ -27,8 +27,6 @@ When the user opens the app, they are directed to the trending page which shows 
 
 A demo of the app can be viewed here: https://watch.screencastify.com/v/8YifPtpZBNVAK6wa4GIK
 
-![Watch Demo](./assets/demo.mp4)
-
 ## Contributing
 
  ![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.0-4baaaa.svg)
