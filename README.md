@@ -19,7 +19,7 @@ As a user I want to be able to search for movies by name, genre or trending and 
 * [Questions](#questions)
 
 ## Installation
-To run project locally, clone repo, run npm install and then npm start. Use your preferred ios emullator or your ios device.
+To run project locally, clone repo, run npm install and then npm start. Use your preferred ios simulator or your ios device.
 
 ## Usage
 
